@@ -1,25 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import {useHover} from "./useHover";
 
-function App() {
+function Demo() {
+  const { hovered, ref } = useHover();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div ref={ref}>
+      {hovered ? 'На меня навели мышку' : 'Наведи мышкой на меня'}
     </div>
   );
 }
 
-export default App;
+export default Demo;
